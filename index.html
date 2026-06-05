@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIVAN // CLASS XI-C COMMERCE & TECH CODESPACE</title>
+    <meta name="description" content="Personal portfolio of Shivan, Class XI-C Commerce student bridging the gap between Business Intelligence, Economics, and Software Engineering. Explore retro cyberpunk arcade cabinets, character stats, and command terminals.">
+    <!-- Styling stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons for retro cyberpunk decals -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- MAIN ARCADE CABINET FRAME -->
+    <div class="arcade-cabinet" id="arcade-cabinet-frame">
+        
+        <!-- CABINET TOP LIGHTBOX MARQUEE -->
+        <div class="cabinet-marquee">
+            <div class="marquee-grid"></div>
+            <div class="marquee-content">
+                <div class="marquee-logo" id="marquee-logo-blink">SHIVAN.SYS</div>
+                <div class="marquee-title">COIN-OP PORTFOLIO</div>
+                <div class="marquee-status" id="cabinet-status-pill">COINS: 01</div>
+            </div>
+        </div>
+
+        <!-- CABINET SCREEN COMPARTMENT -->
+        <div class="cabinet-screen-container">
+            <!-- CRT Screen Curvature/Bezel Overlay -->
+            <div class="crt-bezel"></div>
+            
+            <!-- Scanlines Layer -->
+            <div class="crt-scanlines" id="crt-scanlines-layer"></div>
+            
+            <!-- Phosphor Flicker Overlay -->
+            <div class="crt-flicker" id="crt-flicker-layer"></div>
+
+            <!-- SCROLLABLE SCREEN VIEWPORT (CRT Screen Glass) -->
+            <div class="crt-screen-content" id="screen-viewport">
+                
+                <!-- SECTION 1: HERO SCREEN (START SCREEN) -->
+                <section class="screen-panel hero-panel" id="section-hero">
+                    <div class="hero-grid-bg"></div>
+                    
+                    <div class="hero-logo-container">
+                        <h1 class="hero-main-title" id="main-hero-title">
+                            SHIVAN // CLASS XI-C<br><span>COMMERCE & TECH</span>
+                        </h1>
+                        <p class="hero-subheadline">
+                            Bridging the division between <span>quantitative analysis</span>, financial theories, and <span>custom software algorithms</span>. Building data-driven tech pipelines for modern commerce systems.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Start Trigger -->
+                    <button class="insert-coin-btn" id="start-game-btn">
+                        <i class="fa-solid fa-gamepad" style="margin-right: 8px;"></i>PRESS START
+                    </button>
+                    
+                    <div class="start-instruction">USE ARCADE CONTROLS OR SWIPE TO NAVIGATE</div>
+
+                    <!-- Ticker scrolling bar -->
+                    <div class="ticker-tape">
+                        <div class="ticker-wrap">
+                            <div class="ticker-item">ACCOUNTANCY <span>//</span> BALANCE SHEET LOGICS</div>
+                            <div class="ticker-item">ECONOMICS <span>//</span> FISCAL EQUILIBRIUM MODELLING</div>
+                            <div class="ticker-item">BUSINESS STUDIES <span>//</span> OPERATIONS STRATEGY</div>
+                            <div class="ticker-item">INFORMATICS PRACTICES <span>//</span> PYTHON & SQL CODE ARCHITECTURES</div>
+                            <div class="ticker-item">GITHUB FEED DYNAMIC LOADING <span>//</span> STABLE BOOT SUCCESSFUL</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: EDUCATION (CHARACTER STATS SCREEN) -->
+                <section class="screen-panel" id="section-education">
+                    <div class="panel-header">
+                        <h2 class="panel-title"><i class="fa-solid fa-user-ninja"></i> PLAYER SELECT & STATS</h2>
+                        <span class="panel-index">STAGE 02/05</span>
+                    </div>
+                    
+                    <div class="education-layout">
+                        <!-- CHARACTER PORTRAIT CARD -->
+                        <div class="player-profile-card">
+                            <div class="avatar-container">
+                                <div class="avatar-pixel"></div>
+                            </div>
+                            <h3 class="player-name">SHIVAN</h3>
+                            <span class="player-class">CLASS XI-C DEVELOPER</span>
+                            
+                            <div class="player-meta-info">
+                                <div class="meta-row">
+                                    <span>STREAM:</span>
+                                    <span>COMMERCE</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span>LEVEL:</span>
+                                    <span>XI-C (ACADEMICS)</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span>TECH ACCESS:</span>
+                                    <span>PYTHON / SQL / WEB</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STATS & CORE FOCUSES -->
+                        <div class="player-stats-list">
+                            <!-- STAT 1 -->
+                            <div class="stat-item">
+                                <div class="stat-label-row">
+                                    <span>INFORMATICS PRACTICES</span>
+                                    <span class="stat-val">LVL 90%</span>
+                                </div>
+                                <div class="stat-bar-outer stat-cyan">
+                                    <div class="stat-bar-inner" data-level="90%"></div>
+                                </div>
+                                <div class="stat-details">Python data science (Pandas, Numpy), SQL database design, and algorithmic problem-solving.</div>
+                            </div>
+                            <!-- STAT 2 -->
+                            <div class="stat-item">
+                                <div class="stat-label-row">
+                                    <span>ACCOUNTANCY</span>
+                                    <span class="stat-val">LVL 85%</span>
+                                </div>
+                                <div class="stat-bar-outer stat-magenta">
+                                    <div class="stat-bar-inner" data-level="85%"></div>
+                                </div>
+                                <div class="stat-details">Double-entry bookkeeping systems, structural financial statements, and ledger reconciliations.</div>
+                            </div>
+                            <!-- STAT 3 -->
+                            <div class="stat-item">
+                                <div class="stat-label-row">
+                                    <span>ECONOMICS</span>
+                                    <span class="stat-val">LVL 82%</span>
+                                </div>
+                                <div class="stat-bar-outer stat-green">
+                                    <div class="stat-bar-inner" data-level="82%"></div>
+                                </div>
+                                <div class="stat-details">Microeconomic models, demand elasticity, production theory, and macroeconomic fundamentals.</div>
+                            </div>
+                            <!-- STAT 4 -->
+                            <div class="stat-item">
+                                <div class="stat-label-row">
+                                    <span>BUSINESS STUDIES</span>
+                                    <span class="stat-val">LVL 78%</span>
+                                </div>
+                                <div class="stat-bar-outer stat-yellow">
+                                    <div class="stat-bar-inner" data-level="78%"></div>
+                                </div>
+                                <div class="stat-details">Corporate structures, management methodologies, marketing strategies, and trade regulations.</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: PROJECTS & GITHUB (ARCADE CABINET GAME CARDS) -->
+                <section class="screen-panel" id="section-projects">
+                    <div class="panel-header">
+                        <h2 class="panel-title"><i class="fa-solid fa-gamepad"></i> CHOOSE CABINET (PROJECTS)</h2>
+                        <span class="panel-index">STAGE 03/05</span>
+                    </div>
+
+                    <div class="projects-container">
+                        <div class="projects-meta">
+                            <span>REPOSITORIES DETECTED (GITHUB: shivanchowdhry123)</span>
+                            <span id="api-status-indicator" style="color: var(--neon-cyan);"><i class="fa-solid fa-circle-nodes"></i> CONNECTING...</span>
+                        </div>
+
+                        <!-- CARDS WRAPPER -->
+                        <div class="projects-grid" id="projects-grid-container">
+                            <!-- dynamic content or fallback inserted here -->
+                            <div class="project-card lang-python">
+                                <div class="card-top-row">
+                                    <span class="project-title">COMMERCE LEDGER CLI</span>
+                                    <span class="game-badge">PYTHON</span>
+                                </div>
+                                <p class="project-description">A command line ledger tool designed to automate double-entry calculations, balance sheets, and journal postings.</p>
+                                <div class="card-footer">
+                                    <div class="project-lang-detail">
+                                        <span class="lang-dot"></span>Python
+                                    </div>
+                                    <a href="https://github.com/shivanchowdhry123" target="_blank" class="project-link">
+                                        PLAY CODE <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project-card lang-javascript">
+                                <div class="card-top-row">
+                                    <span class="project-title">FINANCIAL DATA DASH</span>
+                                    <span class="game-badge">JS / CSS</span>
+                                </div>
+                                <p class="project-description">Interactive dashboard that visualizes market supply-demand functions and consumer pricing shifts dynamically.</p>
+                                <div class="card-footer">
+                                    <div class="project-lang-detail">
+                                        <span class="lang-dot"></span>JavaScript
+                                    </div>
+                                    <a href="https://github.com/shivanchowdhry123" target="_blank" class="project-link">
+                                        PLAY CODE <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project-card lang-html">
+                                <div class="card-top-row">
+                                    <span class="project-title">PORTFOLIO ARCHIVE</span>
+                                    <span class="game-badge">HTML / CSS</span>
+                                </div>
+                                <p class="project-description">Retro CRT terminals, custom styled layouts, and responsive CSS frameworks designed for creative portfolios.</p>
+                                <div class="card-footer">
+                                    <div class="project-lang-detail">
+                                        <span class="lang-dot"></span>HTML
+                                    </div>
+                                    <a href="https://github.com/shivanchowdhry123" target="_blank" class="project-link">
+                                        PLAY CODE <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: AMBITION (THE NEXT LEVEL SKILL TREE) -->
+                <section class="screen-panel" id="section-ambition">
+                    <div class="panel-header">
+                        <h2 class="panel-title"><i class="fa-solid fa-crown"></i> MISSION MAP & FUTURE QUESTS</h2>
+                        <span class="panel-index">STAGE 04/05</span>
+                    </div>
+
+                    <div class="ambition-tree">
+                        <p class="ambition-intro">
+                            My academic and engineering journey focuses on the convergence of financial systems, market indicators, and technical architecture. Here is my current development tree and goals:
+                        </p>
+
+                        <div class="quest-grid">
+                            <!-- QUEST 1 -->
+                            <div class="quest-card quest-unlocked">
+                                <div class="quest-status status-unlocked"><i class="fa-solid fa-circle-check"></i> UNLOCKED</div>
+                                <span class="quest-level">QUEST 01 // BASICS</span>
+                                <h3 class="quest-name">COMMERCE FOUNDATIONS</h3>
+                                <p class="quest-desc">Master the mechanics of journal logging, trial balance reconciliations, and the fundamental supply/demand curves of microeconomics.</p>
+                                <div class="quest-sub-box">
+                                    <div class="quest-sub-title">Acquired Stats</div>
+                                    <ul class="quest-rewards">
+                                        <li>+Accountancy fundamentals</li>
+                                        <li>+Economic intuition</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- QUEST 2 -->
+                            <div class="quest-card quest-active">
+                                <div class="quest-status status-active"><i class="fa-solid fa-spinner"></i> IN PROGRESS</div>
+                                <span class="quest-level">QUEST 02 // DATA INTERMEDIATE</span>
+                                <h3 class="quest-name">FINANCIAL DATA ANALYTICS</h3>
+                                <p class="quest-desc">Developing scripts using Python (Pandas/Matplotlib) to parse ledger databases, trace operational cost patterns, and produce graphs.</p>
+                                <div class="quest-sub-box">
+                                    <div class="quest-sub-title">Unlocks Skills</div>
+                                    <ul class="quest-rewards">
+                                        <li>+Python Data Science libraries</li>
+                                        <li>+Database integration (SQL)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- QUEST 3 -->
+                            <div class="quest-card quest-locked">
+                                <div class="quest-status status-locked"><i class="fa-solid fa-lock"></i> LOCKED</div>
+                                <span class="quest-level">QUEST 03 // TECH APEX</span>
+                                <h3 class="quest-name">FINTECH SYSTEMS & LEDGERS</h3>
+                                <p class="quest-desc">Build secure, scalable double-entry transactional API microservices that support high-concurrency ledger operations and fraud detection.</p>
+                                <div class="quest-sub-box">
+                                    <div class="quest-sub-title">Target Skills</div>
+                                    <ul class="quest-rewards">
+                                        <li>+FinTech API Integrations</li>
+                                        <li>+High performance distributed databases</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 5: CONTACT (THE CLI TERMINAL) -->
+                <section class="screen-panel" id="section-contact">
+                    <div class="panel-header">
+                        <h2 class="panel-title"><i class="fa-solid fa-terminal"></i> Holographic Communication Terminal</h2>
+                        <span class="panel-index">STAGE 05/05</span>
+                    </div>
+
+                    <div class="contact-layout">
+                        <!-- Left-column terminal notes -->
+                        <div class="terminal-info-pane">
+                            <div class="terminal-intro-text">
+                                <p><strong>ESTABLISHING LINK...</strong></p>
+                                <p>Inputs to the terminal right-hand console will encrypt your transmission and transmit it directly to Shivan's personal codespace.</p>
+                                <p>For direct access or queries regarding collaborate ventures, educational projects, or financial systems coding, please use the links below.</p>
+                            </div>
+
+                            <!-- Social Buttons styled as retro decals -->
+                            <div class="terminal-meta-links">
+                                <a href="https://github.com/shivanchowdhry123" target="_blank" class="meta-link-btn" id="link-github-btn">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GITHUB // shivanchowdhry123</span>
+                                </a>
+                                <a href="mailto:shivanchowdhry123@gmail.com" class="meta-link-btn" id="link-email-btn">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span>EMAIL // shivanchowdhry123@gmail.com</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Right-column CLI window -->
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-dots">
+                                    <span class="terminal-dot close"></span>
+                                    <span class="terminal-dot minimize"></span>
+                                    <span class="terminal-dot maximize"></span>
+                                </div>
+                                <div class="terminal-window-title">shivan@codespace: ~/terminal-mail</div>
+                            </div>
+                            <div class="terminal-body">
+                                <div class="terminal-welcome">SHIVAN CODESPACE COM-LINK v1.0.0 (SECURE)</div>
+                                
+                                <form class="terminal-form" id="contact-terminal-form" action="https://formspree.io/f/xvovwqyl" method="POST">
+                                    <div class="terminal-row">
+                                        <label class="terminal-prompt" for="contact-name">shivan@codespace:~$ name --input</label>
+                                        <input type="text" id="contact-name" name="name" class="terminal-input" required placeholder="your name...">
+                                    </div>
+                                    <div class="terminal-row">
+                                        <label class="terminal-prompt" for="contact-email">shivan@codespace:~$ email --input</label>
+                                        <input type="email" id="contact-email" name="email" class="terminal-input" required placeholder="your email...">
+                                    </div>
+                                    <div class="terminal-row">
+                                        <label class="terminal-prompt" for="contact-message">shivan@codespace:~$ message --input</label>
+                                        <textarea id="contact-message" name="message" class="terminal-textarea" required placeholder="write details here..."></textarea>
+                                    </div>
+                                    
+                                    <button type="submit" class="terminal-submit-btn" id="terminal-submit-btn">
+                                        <i class="fa-solid fa-paper-plane" style="margin-right: 6px;"></i>EXECUTE TRANSMISSION
+                                    </button>
+                                </form>
+
+                                <!-- Console print statements -->
+                                <div class="terminal-log-output" id="terminal-logs">
+                                    <!-- success/error logs printed here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- PHYSICAL CABINET INTERFACE (FOOTER CONTROLS) -->
+        <div class="cabinet-controls">
+            <!-- Joystick component -->
+            <div class="joystick-control">
+                <button class="joystick-arrow" id="joystick-left-btn" title="Scroll Left"><i class="fa-solid fa-caret-left fa-2x"></i></button>
+                <div class="joystick-housing">
+                    <div class="joystick-shaft" id="joystick-stick"></div>
+                </div>
+                <button class="joystick-arrow" id="joystick-right-btn" title="Scroll Right"><i class="fa-solid fa-caret-right fa-2x"></i></button>
+            </div>
+
+            <!-- Arcade Action Buttons -->
+            <div class="action-buttons">
+                <!-- Navigation A / Scroll Left -->
+                <div class="action-btn-wrapper">
+                    <button class="arcade-btn btn-cyan" id="arcade-btn-left" title="Scroll Left"></button>
+                    <span class="btn-label">NAV L</span>
+                </div>
+                <!-- Navigation B / Scroll Right -->
+                <div class="action-btn-wrapper">
+                    <button class="arcade-btn btn-magenta" id="arcade-btn-right" title="Scroll Right"></button>
+                    <span class="btn-label">NAV R</span>
+                </div>
+                <!-- Toggle FX -->
+                <div class="action-btn-wrapper">
+                    <button class="arcade-btn btn-yellow" id="arcade-btn-fx" title="Toggle CRT Scanlines"></button>
+                    <span class="btn-label">CRT FX</span>
+                </div>
+                <!-- Toggle sound -->
+                <div class="action-btn-wrapper">
+                    <button class="arcade-btn btn-green" id="arcade-btn-mute" title="Toggle Audio Synthesizer"></button>
+                    <span class="btn-label">SOUND</span>
+                </div>
+            </div>
+
+            <!-- SYSTEM CONTROLS (Select, Start, Power) -->
+            <div class="system-buttons">
+                <div class="system-btn-wrapper">
+                    <button class="system-btn" id="arcade-select-btn" title="Reset View"></button>
+                    <span class="btn-label">SELECT</span>
+                </div>
+                <div class="system-btn-wrapper">
+                    <button class="system-btn" id="arcade-start-btn" title="Insert Coin / Start Game"></button>
+                    <span class="btn-label">START</span>
+                </div>
+                <div class="system-btn-wrapper">
+                    <button class="system-btn" id="arcade-power-btn" title="Turn CRT Monitor On/Off" style="background-color: #990000; border-color: #ff3333;"></button>
+                    <span class="btn-label">POWER</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script integrations -->
+    <script src="script.js"></script>
+</body>
+</html>
