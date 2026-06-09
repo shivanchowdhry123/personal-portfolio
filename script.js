@@ -30,15 +30,14 @@ class RetroSynth {
 
     playTone(freq, duration, type = 'sine', decay = true) {
         if (this.muted) return;
-        
-        // Safety check: Context must be explicitly running via user gesture
-        if (!this.ctx || this.ctx.state === 'suspended') return;
+        this.resume();
+        if (!this.ctx) return;
 
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
 
         osc.type = type;
-        osc.frequency.value = freq;
+        osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
 
         gain.gain.setValueAtTime(0.08, this.ctx.currentTime); // Low volume to be pleasant
         if (decay) {
@@ -54,13 +53,111 @@ class RetroSynth {
         osc.start();
         osc.stop(this.ctx.currentTime + duration);
     }
+
+    coin() {
+        this.resume();
+        this.playTone(523.25, 0.08, 'square'); // C5
+        setTimeout(() => {
+            this.playTone(880, 0.22, 'square'); // A5
+        }, 80);
+    }
+
+    click() {
+        this.playTone(587.33, 0.04, 'triangle'); // D5 quick blip
+    }
+
+    slide() {
+        this.resume();
+        if (this.muted || !this.ctx) return;
+        
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(220, this.ctx.currentTime); // A3
+        osc.frequency.exponentialRampToValueAtTime(880, this.ctx.currentTime + 0.18); // A5
+
+        gain.gain.setValueAtTime(0.06, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.18);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start();
+        osc.stop(this.ctx.currentTime + 0.18);
+    }
+
+    success() {
+        this.resume();
+        const notes = [523.25, 659.25, 783.99, 1046.50]; // C5 -> E5 -> G5 -> C6
+        notes.forEach((freq, idx) => {
+            setTimeout(() => {
+                this.playTone(freq, 0.12, 'square');
+            }, idx * 80);
+        });
+    }
+
+    error() {
+        this.resume();
+        if (this.muted || !this.ctx) return;
+
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(180, this.ctx.currentTime);
+        osc.frequency.linearRampToValueAtTime(70, this.ctx.currentTime + 0.25);
+
+        gain.gain.setValueAtTime(0.12, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.25);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start();
+        osc.stop(this.ctx.currentTime + 0.25);
+    }
+
+    power(on = true) {
+        this.resume();
+        if (this.muted || !this.ctx) return;
+
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = 'sine';
+        if (on) {
+            osc.frequency.setValueAtTime(60, this.ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(900, this.ctx.currentTime + 0.45);
+        } else {
+            osc.frequency.setValueAtTime(900, this.ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(60, this.ctx.currentTime + 0.45);
+        }
+
+        gain.gain.setValueAtTime(0.08, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.45);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start();
+        osc.stop(this.ctx.currentTime + 0.45);
+    }
 }
 
-// Global engine instanced but protected against automated gesture blocks
-const synthEngine = new RetroSynth();
+const synth = new RetroSynth();
 
-document.addEventListener('click', () => {
-    synthEngine.resume();
+// --- 2. LAYOUT & NAVIGATION CONTROLS ---
+document.addEventListener('DOMContentLoaded', () => {
+    const viewport = document.getElementById('screen-viewport');
+    const panels = document.querySelectorAll('.screen-panel');
+    const numPanels = panels.length;
+    let activeIndex = 0;
+    let screenPoweredOn = true;
+
+    // Trigger audio resume on click anywhere
+    document.body.addEventListener('click', () => {
+        synth.init();
     }, { once: true });
 
     // Track scroll events to capture manual swipes/scrolls
